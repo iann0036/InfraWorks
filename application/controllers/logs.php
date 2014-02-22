@@ -4,6 +4,9 @@ class Logs extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('my_logs');
+        $this->load->model('my_users');
+        $this->load->model('my_assets');
+
         $this->load->library('session');
         $this->load->helper('url');
         if (!$this->session->userdata('username'))
@@ -13,7 +16,7 @@ class Logs extends CI_Controller {
 	public function index()
 	{
         $data = array(
-            'logs' => $this->my_logs->logs()
+            'logs' => $this->my_logs->getLogs()
         );
 
         $this->load->view('header',array(

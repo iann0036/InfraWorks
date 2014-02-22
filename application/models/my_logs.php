@@ -8,6 +8,10 @@ class My_logs extends CI_Model {
     }
 
     public function log($message) {
+        for ($i=1; $i<func_num_args()-1; $i++) {
+            $message.=print_r(func_get_arg($i),true);
+        }
+
         $insert_data = array(
             'username' => $this->session->userdata('username'),
             'message' => $message

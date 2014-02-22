@@ -1,10 +1,9 @@
         <div class="widget">
             <div class="whead"><h6>Logs</h6></div>
             <div class="body">
-                <textarea rows="10">
-                <?php
+                <textarea rows="30"><?php
                     foreach ($logs as $log) {
-                        echo '* '.$log['message'].'
+                        echo '* '.$log['time'].' - '.$log['username'].' - '.$log['message'].'
 ';
                     }
                 ?>

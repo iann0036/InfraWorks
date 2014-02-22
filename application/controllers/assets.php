@@ -5,6 +5,7 @@ class Assets extends CI_Controller {
         parent::__construct();
         $this->load->model('my_users');
         $this->load->model('my_assets');
+        $this->load->model('my_logs');
         $this->load->library('session');
         $this->load->helper('url');
         if (!$this->session->userdata('username'))
@@ -56,6 +57,7 @@ class Assets extends CI_Controller {
         }
         $asset_id = $this->my_assets->addAsset($this->input->get_post('username'),$this->input->get_post('product'),$this->input->get_post('barcode'),$this->input->get_post('notes'),$fields);
 
+        $this->my_logs->log('Added asset '.$asset_id.' with properties; ',$this->input->get_post('username'),$this->input->get_post('product'),$this->input->get_post('barcode'),$this->input->get_post('notes'),$fields);
         redirect('/assets/view/'.$asset_id);
     }
 
@@ -83,6 +85,7 @@ class Assets extends CI_Controller {
         ));
         $this->load->view('assets_reassign',$data);
         $this->load->view('footer');
+        $this->my_logs->log('Reassigning asset '.$id.' to '.$asset['username']);
     }
 
 

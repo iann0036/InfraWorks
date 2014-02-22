@@ -5,6 +5,7 @@ class Users extends CI_Controller {
         parent::__construct();
         $this->load->model('my_users');
         $this->load->model('my_assets');
+        $this->load->model('my_logs');
         $this->load->library('session');
         $this->load->helper('url');
         if (!$this->session->userdata('username'))

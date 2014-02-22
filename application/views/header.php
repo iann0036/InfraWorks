@@ -141,6 +141,8 @@
             <li><a href="/users/" title=""<?php if ($page=='users') echo ' class="active" '; ?>><img src="/images/icons/mainnav/ui.png" alt="" /><span>Users</span></a></li>
             <li><a href="/products/" title=""<?php if ($page=='products') echo ' class="active" '; ?>><img src="/images/icons/mainnav/products.png" alt="" /><span>Products</span></a></li>
             <li><a href="/report/" title=""<?php if ($page=='report') echo ' class="active" '; ?>><img src="/images/icons/mainnav/statistics.png" alt="" /><span>Report</span></a></li>
+            <li><a href="/logs/" title=""<?php if ($page=='logs') echo ' class="active" '; ?>><img src="/images/icons/mainnav/logs.png" alt="" /><span>Logs</span></a></li>
+
         </ul>
     </div>
 

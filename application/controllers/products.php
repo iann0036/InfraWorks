@@ -5,6 +5,7 @@ class Products extends CI_Controller {
         parent::__construct();
         $this->load->model('my_users');
         $this->load->model('my_assets');
+        $this->load->model('my_logs');
         $this->load->library('session');
         $this->load->helper('url');
         if (!$this->session->userdata('username'))
@@ -33,6 +34,9 @@ class Products extends CI_Controller {
         $description = $this->input->get_post('description');
 
         $insert_id = $this->my_assets->addProduct($name,$description);
+
+        $this->my_logs->log('Added product '.$insert_id.' with properties: ',$name,$description);
+
         redirect('/products/modify/'.$insert_id);
     }
 
@@ -51,6 +55,8 @@ class Products extends CI_Controller {
         ));
         $this->load->view('products_modify',$data);
         $this->load->view('footer');
+
+        $this->my_logs->log('Modified product '.$id.' with properties: ',$data);
     }
 
     public function fields() {
@@ -61,6 +67,8 @@ class Products extends CI_Controller {
         foreach($fieldstring as $field) {
             $this->my_assets->addField($product_id,$field[0],$field[1],$field[2]);
         }
+
+        $this->my_logs->log('Modified product '.$this->input->get_post('id').' to have fields: ',$fieldstring);
 
         redirect('/products/view/'.$product_id);
     }
