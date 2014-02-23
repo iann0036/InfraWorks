@@ -67,7 +67,7 @@ class Assets extends CI_Controller {
         );
 
         $this->load->view('header',array(
-            'page' => 'assets_modify',
+            'page' => 'Modify Asset',
             'users' => $this->my_users->count(),
             'assets' => $this->my_assets->count(),
             'username' => $this->session->userdata('username'),
@@ -95,7 +95,7 @@ class Assets extends CI_Controller {
         );
 
         $this->load->view('header',array(
-            'page' => 'assets_add',
+            'page' => 'Add Asset',
             'users' => $this->my_users->count(),
             'assets' => $this->my_assets->count(),
             'username' => $this->session->userdata('username'),

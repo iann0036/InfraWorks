@@ -88,7 +88,7 @@ class My_assets extends CI_Model {
         return null;
     }
 
-    private function getProductNameByProductId($id) {
+    public function getProductNameByProductId($id) {
         $this->db->where('id',$id);
         $result = $this->db->get('products');
 
@@ -158,6 +158,11 @@ class My_assets extends CI_Model {
         $this->db->delete('fields');
     }
 
+    public function clearField($id) {
+        $this->db->where('id',$id);
+        $this->db->delete('fields');
+    }
+
     public function getFields($id) {
         $fields = array();
 
@@ -176,13 +181,15 @@ class My_assets extends CI_Model {
     }
 
     public function addField($id,$name,$type,$options) {
-        $insert_data = array(
-            'product_id' => $id,
-            'name' => $name,
-            'type' => $type,
-            'options' => $options
-        );
-        $this->db->insert('fields',$insert_data);
+        if ($name!=null) {
+            $insert_data = array(
+                'product_id' => $id,
+                'name' => $name,
+                'type' => $type,
+                'options' => $options
+            );
+            $this->db->insert('fields',$insert_data);
+        }
     }
 
     public function getProducts() {

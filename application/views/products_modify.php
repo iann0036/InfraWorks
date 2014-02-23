@@ -1,7 +1,7 @@
 <div class="widget">
     <div class="whead"><h6>Products Modify</h6><a href="/products/view/<?php echo $id; ?>" class="buttonH bLightBlue" title="">Back to Product View</a></div>
     <div class="body">
-        <p><font style="color: #FF0000;"><b>WARNING: </b>Modification of a product in any way will remove all assets relating to it</font></p>
+        <p><font style="color: #FF0000;"><b>WARNING: </b>Removal of a field will remove all data associated with it</font></p>
 
         <!-- Dialog content -->
         <div id="formDialog" class="dialog" title="Add Field">
@@ -41,6 +41,7 @@
 </form>
 
 <script>
+    var fieldIndex = 0;
     var custom_fields = new Array();
 
     function doSave() {
@@ -50,9 +51,10 @@
 
     function addCustomField(name,type,options) {
         var custom_field = new Array(name,type,options);
-        custom_fields.push(custom_field);
+        custom_fields[fieldIndex] = custom_field;
 
-        var newFieldHTML = '<p><a href="#" class="tablectrl_small bRed tipS" original-title="Remove"><span class="iconb" data-icon="&#xe136;"></span></a> <b>' + name + '</b> - ';
+        var newFieldHTML = '<p id="field_' + fieldIndex + '"><a onclick="removeField(' + fieldIndex + ')" href="#" class="tablectrl_small bRed tipS" original-title="Remove"><span class="iconb" data-icon="&#xe136;"></span></a> <b>' + name + '</b> - ';
+
         if (type=='txt')
             newFieldHTML += 'Text Field (single line)';
         else if (type=='txtu')
@@ -61,6 +63,13 @@
             newFieldHTML += 'Dropdown';
         newFieldHTML += '</p>';
         document.getElementById('custom_fields').innerHTML += newFieldHTML;
+
+        fieldIndex++;
+    }
+
+    function removeField(id) {
+        document.getElementById('field_' + id).parentNode.removeChild(document.getElementById('field_' + id));
+        custom_fields.splice(id, 1);
     }
 
     <?php

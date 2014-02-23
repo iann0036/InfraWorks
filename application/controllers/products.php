@@ -61,18 +61,30 @@ class Products extends CI_Controller {
         ));
         $this->load->view('products_modify',$data);
         $this->load->view('footer');
-
-        $this->my_logs->log('Modified product '.$id.' with properties: ',$data);
     }
 
     public function fields() {
         $product_id = $this->input->get_post('id');
         $fieldstring = json_decode($this->input->get_post('fieldstring'),true);
 
-        $this->my_assets->clearFields($product_id);
+        $original_fields = $this->my_assets->getFields($product_id);
+
         foreach($fieldstring as $field) {
-            $this->my_assets->addField($product_id,$field[0],$field[1],$field[2]);
+            $skip = false;
+            for ($i=0; $i<count($original_fields); $i++) { // iterate through existing
+                if ($field[0]==$original_fields[$i]['name']) {
+                    unset($original_fields[$i]);
+                    $original_fields = array_values($original_fields); //rekey index
+                    $skip = true;
+                    break;
+                }
+            }
+            if (!$skip)
+                $this->my_assets->addField($product_id,$field[0],$field[1],$field[2]);
         }
+
+        foreach ($original_fields as $field) // remove not matched
+            $this->my_assets->clearField($field['id']);
 
         $this->my_logs->log('Modified product '.$this->input->get_post('id').' to have fields: ',$fieldstring);
 
@@ -82,6 +94,7 @@ class Products extends CI_Controller {
     public function view($id) {
         $data = array(
             'id' => $id,
+            'name' => $this->my_assets->getProductNameByProductId($id),
             'fields' => $this->my_assets->getFields($id),
             'assets' => $this->my_assets->getAssetsByProductId($id)
         );

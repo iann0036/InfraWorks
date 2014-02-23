@@ -1,5 +1,5 @@
         <div class="widget">
-            <div class="whead"><h6>Products View</h6><a onclick="confirmProductDelete()" class="buttonH bRed" title="">Delete Product</a><a href="/products/modify/<?php echo $id; ?>" class="buttonH bBlue" title="">Edit Product Fields</a></div>
+            <div class="whead"><h6><?php echo $name; ?></h6><a onclick="confirmProductDelete()" class="buttonH bRed" title="">Delete Product</a><a href="/products/modify/<?php echo $id; ?>" class="buttonH bBlue" title="">Edit Product Fields</a></div>
             <div class="body">
                 <ul>
                     <li>
@@ -25,7 +25,7 @@
         </div>
 
         <div class="widget">
-            <div class="whead"><h6>Users with Product</h6></div>
+            <div class="whead"><h6>Users with <?php echo $name; ?></h6></div>
             <div class="body">
                 <ul>
                     <?php
