@@ -1,5 +1,5 @@
         <div class="widget">
-            <div class="whead"><h6>Products View</h6><a href="/products/modify/<?php echo $id; ?>" class="buttonH bBlue" title="">Edit Product Fields</a><a href="/products/convert/<?php echo $id; ?>" class="buttonH bSea" title="">Convert to Loan</a></div>
+            <div class="whead"><h6>Products View</h6><a href="/products/remove/<?php echo $id; ?>" class="buttonH bRed" title="">Delete Product</a><a href="/products/modify/<?php echo $id; ?>" class="buttonH bBlue" title="">Edit Product Fields</a></div>
             <div class="body">
                 <ul>
                     <li>

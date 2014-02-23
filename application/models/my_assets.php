@@ -33,6 +33,35 @@ class My_assets extends CI_Model {
         return $asset_id;
     }
 
+    public function modifyAsset($id,$username,$product,$barcode,$notes,$inputs) {
+        if ($this->my_users->getUserType($username)=='ldap') {
+            $this->my_users->addUserToDatabase($username);
+        }
+
+        $update_data = array(
+            'username' => $username,
+            'product_id' => $product,
+            'barcode' => $barcode,
+            'notes' => $notes
+        );
+        $this->db->where('id',$id);
+        $this->db->update('assets',$update_data);
+        $asset_id = $id;
+
+        $this->db->where('asset_id',$asset_id);
+        $this->db->delete('asset_fields');
+        foreach ($inputs as $input) {
+            $insert_data = array(
+                'asset_id' => $asset_id,
+                'field_id' => $input['id'],
+                'value' => $input['value']
+            );
+            $this->db->insert('asset_fields',$insert_data);
+        }
+
+        return $asset_id;
+    }
+
     public function reassignAsset($id,$username) {
         $update_data = array(
             'username' => $username
