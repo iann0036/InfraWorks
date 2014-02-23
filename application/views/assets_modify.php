@@ -53,8 +53,17 @@
                     if (isset($field_values[$fields[$i]['id']]))
                         echo $field_values[$fields[$i]['id']];
                     echo '</textarea>';
-                } else
-                    echo '<select id="field_'.$fields[$i]['id'].'" name="field_'.$fields[$i]['id'].'" class="styled"></select>';
+                } else {
+                    echo '<select id="field_'.$fields[$i]['id'].'" name="field_'.$fields[$i]['id'].'" class="styled">';
+                    $options = explode(',',$fields[$i]['options']);
+                    for ($j=0; $j<count($options); $j++) {
+                        if ($field_values[$fields[$i]['id']]==$j)
+                            echo '<option selected value="'.$j.'">'.$options[$j].'</option>';
+                        else
+                            echo '<option value="'.$j.'">'.$options[$j].'</option>';
+                    }
+                    echo '</select>';
+                }
                 echo '</div></div>';
             }
             ?>
@@ -97,8 +106,14 @@
                     fieldHTML += '<input id="field_' + fields[i]['id'] + '" name="field_' + fields[i]['id'] + '" type="text" />';
                 else if (fields[i]['type']=='txtu')
                     fieldHTML += '<textarea id="field_' + fields[i]['id'] + '" name="field_' + fields[i]['id'] + '" rows="8"></textarea>';
-                else
-                    fieldHTML += '<select id="field_' + fields[i]['id'] + '" name="field_' + fields[i]['id'] + '" class="styled"></select>';
+                else {
+                    fieldHTML += '<select id="field_' + fields[i]['id'] + '" name="field_' + fields[i]['id'] + '" class="styled">';
+                    var options = fields[i]['options'].split(',');
+                    for (var j=0; j<options.length; j++) {
+                        fieldHTML += '<option value="' + j + '">' + options[j] + '</option>';
+                    }
+                    fieldHTML += '</select>';
+                }
                 fieldHTML += '</div></div>';
                 document.getElementById('customFields').innerHTML += fieldHTML;
             }

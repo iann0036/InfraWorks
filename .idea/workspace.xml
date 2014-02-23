@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55ca7c29-aabd-486e-af5f-3eb7141f9cb5" name="Default" comment="Reassignment of assets">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/assets_modify.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/assets.php" afterPath="$PROJECT_DIR$/application/controllers/assets.php" />
+    <list default="true" id="55ca7c29-aabd-486e-af5f-3eb7141f9cb5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/assets_add.php" afterPath="$PROJECT_DIR$/application/views/assets_add.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/assets_modify.php" afterPath="$PROJECT_DIR$/application/views/assets_modify.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/assets_view.php" afterPath="$PROJECT_DIR$/application/views/assets_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/my_assets.php" afterPath="$PROJECT_DIR$/application/models/my_assets.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/products_view.php" afterPath="$PROJECT_DIR$/application/views/products_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/users.php" afterPath="$PROJECT_DIR$/application/views/users.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="InfraWorks.iws" />
@@ -31,15 +28,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ajax.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="5" selection-start="556" selection-end="556" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="391">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="assets.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/assets.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -52,7 +40,7 @@
       <file leaf-file-name="my_assets.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/my_assets.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="124" column="1" selection-start="3856" selection-end="3856" vertical-scroll-proportion="-17.653847" vertical-offset="1649" max-vertical-offset="3842">
+            <state line="188" column="1" selection-start="5624" selection-end="5624" vertical-scroll-proportion="-17.653847" vertical-offset="2737" max-vertical-offset="3842">
               <folding />
             </state>
           </provider>
@@ -70,7 +58,16 @@
       <file leaf-file-name="assets_view.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/assets_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="131" selection-start="161" selection-end="161" vertical-scroll-proportion="0.063079774" vertical-offset="0" max-vertical-offset="539">
+            <state line="12" column="107" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.37847868" vertical-offset="0" max-vertical-offset="539">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="assets_add.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/assets_add.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="71" column="21" selection-start="2967" selection-end="3406" vertical-scroll-proportion="-13.384615" vertical-offset="859" max-vertical-offset="1547">
               <folding />
             </state>
           </provider>
@@ -89,10 +86,7 @@
         <entry file="file://$PROJECT_DIR$/application/views/users_view.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="221">
-              <folding>
-                <marker date="1392642820399" expanded="true" signature="27:428" placeholder="..." />
-                <marker date="1392642820399" expanded="true" signature="195:413" placeholder="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,9 +105,9 @@
       <file leaf-file-name="assets_modify.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/assets_modify.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="62" selection-start="2734" selection-end="2734" vertical-scroll-proportion="-19.923077" vertical-offset="383" max-vertical-offset="1904">
+            <state line="60" column="51" selection-start="3164" selection-end="3164" vertical-scroll-proportion="-16.653847" vertical-offset="587" max-vertical-offset="2159">
               <folding>
-                <marker date="1393132041705" expanded="true" signature="3576:3633" placeholder="..." />
+                <marker date="1393133298654" expanded="true" signature="4048:4105" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -146,7 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/controllers/dashboard.php" />
         <option value="$PROJECT_DIR$/application/controllers/report.php" />
         <option value="$PROJECT_DIR$/application/controllers/users.php" />
         <option value="$PROJECT_DIR$/application/models/my_logs.php" />
@@ -160,6 +153,7 @@
         <option value="$PROJECT_DIR$/application/views/users.php" />
         <option value="$PROJECT_DIR$/application/controllers/assets.php" />
         <option value="$PROJECT_DIR$/application/models/my_assets.php" />
+        <option value="$PROJECT_DIR$/application/views/assets_add.php" />
         <option value="$PROJECT_DIR$/application/views/assets_modify.php" />
         <option value="$PROJECT_DIR$/application/views/assets_view.php" />
       </list>
@@ -378,7 +372,11 @@
       <created>1393129722840</created>
       <updated>1393129722840</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Edit Asset Completed - still need to manage &lt;select&gt;">
+      <created>1393132394248</created>
+      <updated>1393132394248</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -418,19 +416,13 @@
     <MESSAGE value="Added logging functionality" />
     <MESSAGE value="Enabled logging on relevant actions" />
     <MESSAGE value="Reassignment of assets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reassignment of assets" />
+    <MESSAGE value="Edit Asset Completed - still need to manage &lt;select&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit Asset Completed - still need to manage &lt;select&gt;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/controllers/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="296" selection-end="340" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="408">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/logs.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="0" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="629">
@@ -480,23 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/my_users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3332">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/users_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <folding>
-            <marker date="1392642820399" expanded="true" signature="27:428" placeholder="..." />
-            <marker date="1392642820399" expanded="true" signature="195:413" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/products_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="54" selection-start="655" selection-end="655" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="731">
@@ -522,23 +497,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/my_assets.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="1" selection-start="3856" selection-end="3856" vertical-scroll-proportion="-17.653847" vertical-offset="1649" max-vertical-offset="3842">
+        <state line="188" column="1" selection-start="5624" selection-end="5624" vertical-scroll-proportion="-17.653847" vertical-offset="2737" max-vertical-offset="3842">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/users_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/my_users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3332">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/assets_add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="21" selection-start="2967" selection-end="3406" vertical-scroll-proportion="-13.384615" vertical-offset="859" max-vertical-offset="1547">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/assets_modify.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="62" selection-start="2734" selection-end="2734" vertical-scroll-proportion="-19.923077" vertical-offset="383" max-vertical-offset="1904">
+        <state line="60" column="51" selection-start="3164" selection-end="3164" vertical-scroll-proportion="-16.653847" vertical-offset="587" max-vertical-offset="2159">
           <folding>
-            <marker date="1393132041705" expanded="true" signature="3576:3633" placeholder="..." />
+            <marker date="1393133298654" expanded="true" signature="4048:4105" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/assets_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="131" selection-start="161" selection-end="161" vertical-scroll-proportion="0.063079774" vertical-offset="0" max-vertical-offset="539">
+        <state line="12" column="107" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.37847868" vertical-offset="0" max-vertical-offset="539">
           <folding />
         </state>
       </provider>

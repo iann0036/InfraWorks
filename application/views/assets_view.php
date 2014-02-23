@@ -7,9 +7,13 @@
                 <p><b>Barcode: </b><?php echo $barcode; ?></p>
                 <?php
                     foreach ($fields as $field) {
-                        if (isset($field_values[$field['id']]))
-                            echo '<p><b>'.$field['name'].': </b>'.$field_values[$field['id']].'</p>';
-                        else
+                        if (isset($field_values[$field['id']])) {
+                            if ($field['type']=='select') {
+                                $options = explode(',',$field['options']);
+                                echo '<p><b>'.$field['name'].': </b>'.$options[$field_values[$field['id']]].'</p>';
+                            } else
+                                echo '<p><b>'.$field['name'].': </b>'.$field_values[$field['id']].'</p>';
+                        } else
                             echo '<p><b>'.$field['name'].': </b></p>';
                     }
                 ?>

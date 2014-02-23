@@ -69,8 +69,14 @@
                     fieldHTML += '<input id="field_' + fields[i]['id'] + '" name="field_' + fields[i]['id'] + '" type="text" />';
                 else if (fields[i]['type']=='txtu')
                     fieldHTML += '<textarea id="field_' + fields[i]['id'] + '" name="field_' + fields[i]['id'] + '" rows="8"></textarea>';
-                else
-                    fieldHTML += '<select id="field_' + fields[i]['id'] + '" name="field_' + fields[i]['id'] + '" class="styled"></select>';
+                else {
+                    fieldHTML += '<select id="field_' + fields[i]['id'] + '" name="field_' + fields[i]['id'] + '" class="styled">';
+                    var options = fields[i]['options'].split(',');
+                    for (var j=0; j<options.length; j++) {
+                        fieldHTML += '<option value="' + j + '">' + options[j] + '</option>';
+                    }
+                    fieldHTML += '</select>';
+                }
                 fieldHTML += '</div></div>';
                 document.getElementById('customFields').innerHTML += fieldHTML;
             }
