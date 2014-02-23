@@ -61,6 +61,19 @@ class Assets extends CI_Controller {
         redirect('/assets/view/'.$asset_id);
     }
 
+    public function doreassign() {
+        $asset_id = $this->input->get_post('id');
+        $new_username = $this->input->get_post('username');
+
+        $update_data = array(
+            'username' => $new_username
+        );
+        $this->db->where('id',$asset_id);
+        $this->db->update('assets',$update_data);
+
+        redirect('/assets/view/'.$asset_id);
+    }
+
     public function reassign($id) {
         $asset = $this->my_assets->getAsset($id);
         $data = array(
@@ -85,7 +98,6 @@ class Assets extends CI_Controller {
         ));
         $this->load->view('assets_reassign',$data);
         $this->load->view('footer');
-        $this->my_logs->log('Reassigning asset '.$id.' to '.$asset['username']);
     }
 
 
@@ -93,6 +105,8 @@ class Assets extends CI_Controller {
         $asset = $this->my_assets->getAsset($id);
         $data = array(
             'id' => $id,
+            'username' => $asset['username'],
+            'user_name' => $this->my_users->getNameByUsername($asset['username']),
             'product_id' => $asset['product_id'],
             'barcode' => $asset['barcode'],
             'name' => $asset['name'],

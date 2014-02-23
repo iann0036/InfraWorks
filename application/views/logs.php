@@ -6,7 +6,6 @@
                         echo '* '.$log['time'].' - '.$log['username'].' - '.$log['message'].'
 ';
                     }
-                ?>
-                </textarea>
+                ?></textarea>
             </div>
         </div>
