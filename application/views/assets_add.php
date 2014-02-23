@@ -5,7 +5,13 @@
         <div class="formRow">
             <div class="grid3"><label>Barcode:</label></div>
             <div class="grid9">
-                <input type="text" name="barcode" />
+                <?php
+                    if ($barcode!=null)
+                        echo '<input type="text" name="barcode" value="'.$barcode.'" />';
+                    else
+                        echo '<input type="text" name="barcode" />';
+                ?>
+
             </div>
         </div>
         <div class="formRow">

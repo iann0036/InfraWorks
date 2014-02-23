@@ -7,8 +7,8 @@
             <div class="grid4">
 
                 <div class="searchLine">
-                    <form action="">
-                        <input type="text" id="search" name="search" class="ac ui-autocomplete-input" placeholder="Lookup asset barcode..." autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                    <form action="/assets/lookup/" method="post">
+                        <input type="text" id="search" name="barcode" class="ac ui-autocomplete-input" placeholder="Lookup asset barcode..." autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
                         <button type="submit" name="find" value=""><span class="icos-search"></span></button>
                     </form>
                 </div>

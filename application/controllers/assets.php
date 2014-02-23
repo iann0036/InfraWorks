@@ -44,6 +44,12 @@ class Assets extends CI_Controller {
         redirect('/assets/view/'.$asset_id);
     }
 
+    public function remove($id) {
+        $this->my_assets->remove($id);
+        $this->my_logs->log('Deleted asset '.$id);
+        redirect('/products/');
+    }
+
     public function modify($id) {
         $asset = $this->my_assets->getAsset($id);
         $data = array(
@@ -71,8 +77,19 @@ class Assets extends CI_Controller {
         $this->load->view('footer');
     }
 
-    public function add($username = null,$product = null) {
+    public function lookup() {
+        $barcode = $this->input->get_post('barcode');
+
+        $asset_id = $this->my_assets->lookup($barcode);
+        if ($asset_id!=null) {
+            redirect('/assets/view/'.$asset_id);
+        } else
+            redirect('/assets/add/'.$barcode);
+    }
+
+    public function add($barcode = null) {
         $data = array(
+            'barcode' => $barcode,
             'users' => $this->my_users->getUsers(),
             'products' => $this->my_assets->getProducts()
         );

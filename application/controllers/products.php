@@ -12,6 +12,12 @@ class Products extends CI_Controller {
             redirect('/login/');
     }
 
+    public function remove($id) {
+        $this->my_assets->removeProduct($id);
+        $this->my_logs->log('Deleted product '.$id);
+        redirect('/products/');
+    }
+
 	public function index()
 	{
         $data = array(

@@ -218,4 +218,26 @@ class My_assets extends CI_Model {
         return $this->db->insert_id();
     }
 
+    public function remove($id) {
+        $this->db->where('id',$id);
+        $this->db->delete('assets');
+
+        $this->db->where('asset_id',$id);
+        $this->db->delete('asset_fields');
+    }
+
+    public function removeProduct($id) {
+        $this->db->where('id',$id);
+        $this->db->delete('products');
+    }
+
+    public function lookup($barcode) {
+        $this->db->where('barcode',$barcode);
+        $result = $this->db->get('assets');
+        if ($result->num_rows() > 0) {
+            $row = $result->row_array();
+            return $row['id'];
+        } else
+            return null;
+    }
 }
